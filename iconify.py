@@ -2,34 +2,57 @@ import os
 import glob
 import math
 import subprocess
+import sys
+from PIL import Image
 
 # Configuration
-ICON_DIR = "./icons"
-ICON_SIZE = 16
+ICON_DIR = sys.argv[1] if len(sys.argv) > 1 else "./icons"
+ICON_SIZE = sys.argv[2] if len(sys.argv) > 2 else 16
 SPRITE_NAME = "sprite.png"
 CSS_NAME = "sprite.css"
 
 # Get all .png files
-icons = sorted(glob.glob(os.path.join(ICON_DIR, "*.png")))
-total_icons = len(icons)
+all_icons = sorted(glob.glob(os.path.join(ICON_DIR, "*.png")))
+valid_icons = []
+invalid_icons = []
+
+# Validate image sizes
+print("🔍 Validating icon sizes...")
+for path in all_icons:
+    try:
+        with Image.open(path) as img:
+            if img.size == (ICON_SIZE, ICON_SIZE):
+                valid_icons.append(path)
+            else:
+                invalid_icons.append(path)
+    except Exception as e:
+        invalid_icons.append(path)
+
+total_icons = len(valid_icons)
 if total_icons == 0:
-    raise SystemExit("❌ No PNG files found in ./icons/")
+    raise SystemExit("❌ No valid icons with correct size found.")
+
+# Report skipped files
+if invalid_icons:
+    print(f"⚠️ Skipped {len(invalid_icons)} invalid icons (not {ICON_SIZE}x{ICON_SIZE}):")
+    for path in invalid_icons:
+        print("   -", os.path.basename(path))
 
 # Calculate closest square grid
 cols = rows = math.ceil(math.sqrt(total_icons))
 sprite_width = cols * ICON_SIZE
 sprite_height = rows * ICON_SIZE
 
-print(f"📦 Found {total_icons} icons. Grid: {cols} x {rows}")
+print(f"📦 Using {total_icons} icons. Grid: {cols} x {rows}")
 
-# Step 1: Generate sprite sheet using ImageMagick
+# Step 1: Generate sprite sheet
 print("🧱 Building sprite sheet with ImageMagick...")
 cmd = [
     "magick", "montage",
     "-tile", f"{cols}x{rows}",
     "-geometry", "+0+0",
     "-background", "none",
-    *icons,
+    *valid_icons,
     SPRITE_NAME
 ]
 subprocess.run(cmd, check=True)
@@ -46,7 +69,7 @@ css = [
 }}"""
 ]
 
-for i, path in enumerate(icons):
+for i, path in enumerate(valid_icons):
     name = os.path.splitext(os.path.basename(path))[0]
     x = (i % cols) * ICON_SIZE
     y = (i // cols) * ICON_SIZE
