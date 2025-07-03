@@ -79,3 +79,10 @@ with open(CSS_NAME, "w") as f:
     f.write("\n".join(css))
 
 print(f"✅ Done! Generated {SPRITE_NAME} and {CSS_NAME}")
+# run robloxify.py to convert the CSS to Lua
+if os.path.exists("robloxify.py"):
+    print("🔄 Running robloxify.py to convert CSS to Lua...")
+    subprocess.run(["python", "robloxify.py", CSS_NAME], check=True)
+else:
+    print("⚠️ Warning: robloxify.py not found. Skipping Lua conversion.")
+# End of script
