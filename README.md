@@ -1,8 +1,8 @@
 # Icon Archive
 
 ## Attribution
-Silk icons by Famfamfam (http://www.famfamfam.com/lab/icons/silk/)
-Fuge icons by Yusuke Kamiyamane (https://p.yusukekamiyamane.com/)
+Silk icons by Famfamfam (http://www.famfamfam.com/lab/icons/silk/)\
+Fugue icons by Yusuke Kamiyamane (https://p.yusukekamiyamane.com/)
 
 ## Python Sprite Generator
 
