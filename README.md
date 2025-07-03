@@ -12,6 +12,7 @@ This repository contains a collection of popular icon libraries. It includes all
 <img src="./library/fatcow32/sprite.png" width="256" height="256" alt="fatcow 32x32">
 <img src="./library/silk16/sprite.png" width="256" height="256" alt="silk 16x16">
 <img src="./library/fugue16/sprite.png" width="256" height="256" alt="fugue 16x16">
+<img src="./library/crystal16/sprite.png" width="256" height="256" alt="crystal 16x16">
 
 ## Python Sprite Generator
 
