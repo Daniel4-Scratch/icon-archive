@@ -1,10 +1,10 @@
 # Icon Archive
 
 ## Attribution
-Silk icons by Famfamfam (http://www.famfamfam.com/lab/icons/silk/)\
-Fugue icons by Yusuke Kamiyamane (https://p.yusukekamiyamane.com/)\
-FatCow icons (https://github.com/gammasoft/fatcow)
-
+- Silk icons by Famfamfam (https://github.com/markjames/famfamfam-silk-icons)
+- Fugue icons by Yusuke Kamiyamane (https://p.yusukekamiyamane.com/)
+- FatCow icons (https://github.com/gammasoft/fatcow)
+- Crystal Project (https://github.com/thecodingmachine/crystal-project/)
 ## Python Sprite Generator
 
 This project includes `iconify.py`, a Python script that automatically generates CSS sprites from PNG icon collections.
