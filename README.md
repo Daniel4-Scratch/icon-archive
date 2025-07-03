@@ -1,10 +1,18 @@
 # Icon Archive
+This repository contains a collection of popular icon libraries. It includes all raw icons and a sprite sheet with CSS classes for easy use in web projects.
 
 ## Attribution
 - Silk icons by Famfamfam (https://github.com/markjames/famfamfam-silk-icons)
 - Fugue icons by Yusuke Kamiyamane (https://p.yusukekamiyamane.com/)
 - FatCow icons (https://github.com/gammasoft/fatcow)
 - Crystal Project (https://github.com/thecodingmachine/crystal-project/)
+
+## Icon Libraries Preview
+<img src="./library/fatcow16/sprite.png" width="256" height="256" alt="fatcow 16x16">
+<img src="./library/fatcow32/sprite.png" width="256" height="256" alt="fatcow 32x32">
+<img src="./library/silk16/sprite.png" width="256" height="256" alt="silk 16x16">
+<img src="./library/fugue16/sprite.png" width="256" height="256" alt="fugue 16x16">
+
 ## Python Sprite Generator
 
 This project includes `iconify.py`, a Python script that automatically generates CSS sprites from PNG icon collections.
