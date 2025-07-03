@@ -7,7 +7,7 @@ from PIL import Image
 
 # Configuration
 ICON_DIR = sys.argv[1] if len(sys.argv) > 1 else "./icons"
-ICON_SIZE = sys.argv[2] if len(sys.argv) > 2 else 16
+ICON_SIZE = int(sys.argv[2]) if len(sys.argv) > 2 else 16
 SPRITE_NAME = "sprite.png"
 CSS_NAME = "sprite.css"
 
