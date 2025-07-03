@@ -1,1 +1,3 @@
 library/* linguist-vendored
+*.css linguist-vendored
+library/**/*.css linguist-generated
