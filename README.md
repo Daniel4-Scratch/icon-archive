@@ -2,7 +2,8 @@
 
 ## Attribution
 Silk icons by Famfamfam (http://www.famfamfam.com/lab/icons/silk/)\
-Fugue icons by Yusuke Kamiyamane (https://p.yusukekamiyamane.com/)
+Fugue icons by Yusuke Kamiyamane (https://p.yusukekamiyamane.com/)\
+FatCow icons (https://github.com/gammasoft/fatcow)
 
 ## Python Sprite Generator
 
